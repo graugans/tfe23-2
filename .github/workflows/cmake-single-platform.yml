@@ -1,6 +1,6 @@
 # This starter workflow is for a CMake project running on a single platform. There is a different starter workflow if you need cross-platform coverage.
 # See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-multi-platform.yml
-name: CMake on a single platform
+name: 🏗️ CMake on a single platform
 
 on:
   push:
@@ -21,25 +21,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Cache CMake Artifacts
-      id: build-cache
-      uses: actions/cache@v3
-      with:
-        path: ${{github.workspace}}
-        key: ${{ runner.os }}-cmake
-
-    - name: Configure CMake
+    - name: 👷 Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
            mkdir -p "${{github.workspace}}/build"
            cmake -B "${{github.workspace}}/build" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-    - name: Build
+    - name: 🛠️ Build
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-    - name: Test
+    - name: 🧪 Test
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: |
