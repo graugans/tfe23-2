@@ -2,7 +2,7 @@
 
 Begleitprojekt für Informatik 3 im Kurs TFE22-2 an der DHBW Ravensburg Campus Friedrichshafen
 
-**WICHTIG** Bitte starten Sie Ihre IDE immer im Hauptverzeichnis dieses Projektes und nicht im Unterverzeichnis der entsprechenden Übungsaufgabe! Ansonsten werden können die Bibliotheken aus dem [contrib](contrib/) Verzeichnis nicht aufgelöst werden.
+**WICHTIG** Bitte verwenden sie zur Entwicklung die vorgefertigten Umgebungen.
 
 ## Prepared Environments
 
