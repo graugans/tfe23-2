@@ -16,8 +16,6 @@ jobs:
   container-job:
     runs-on: ubuntu-latest
     container: ghcr.io/graugans/cpp
-
-  build:
     steps:
     - uses: actions/checkout@v3
 
