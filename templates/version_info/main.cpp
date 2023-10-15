@@ -4,7 +4,7 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
-int main(int argc, char **argv)
+auto main(int argc, char **argv) -> int
 {
     /**
      * CLI11 is a command line parser to add command line options
