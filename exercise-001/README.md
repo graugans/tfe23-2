@@ -1,7 +1,7 @@
 # Aufgabenstellung
 
 
-## Notwenidige git Kommandos
+## Notwendige git Kommandos
 
 ```sh
 git status
