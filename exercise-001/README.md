@@ -6,6 +6,7 @@
 ```sh
 git status
 git branch -a
+git commit -m "fix: typo in Readme"
 ....
 ```
 
