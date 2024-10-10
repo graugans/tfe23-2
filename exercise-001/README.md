@@ -6,7 +6,13 @@
 ```sh
 git status
 git branch -a
-....
+git pull --rebase upstream main
+git log --oneline
+git fetch --all
+git branch -a
+git push -u origin solution-001
+git add
+git commit -m""
 ```
 
 ## Parameterraum
