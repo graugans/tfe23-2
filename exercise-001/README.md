@@ -1,7 +1,7 @@
 # Aufgabenstellung
 
 
-## Notwenidige git Kommandos
+## Notwendige git Kommandos
 
 ```sh
 git status
@@ -11,7 +11,7 @@ git log --oneline
 git fetch --all
 git branch -a
 git push -u origin solution-001
-git add
+git add -p (als Vergleich mit ursprungsinformation)
 git commit -m""
 ```
 
