@@ -1,77 +1,34 @@
 # Aufgabenstellung
 
-
 ## Notwendige git Kommandos
 
 ```sh
 git status
 git branch -a
-git commit -m "fix: typo in Readme"
+git fetch --all
+# create a new local branch based on the upstream (graugans)
+git switch -c solution-002 upstream/main
+# copy the folder exercise-001 to exercise-002
+cp exercise-001/ exercise-002 -r
+# modify the CMakeLists.txt and main.cpp in the directory exercise-002
+# modify the top-level CMakeLists.txt
+# commit the changes
+git add exercise-002
+git commit -m "feat: add exercise number two"
+# push the changes to the cloud
+git push -u origin solution-002
 ....
 ```
 
-## Parameterraum
+## Wiederholung Speicherbereiche in C/C++
 
-Ändern Sie die Vorlage so ab, dass Sie einen Parameter ``count`` mittels Kommandozeile ``-c,--count`` übergeben können. Falls kein Parameter angegeben wird, so ist der Standardwert mit 20 festzusetzen.
-
-Erstellen Sie anschließend einen Commit und pushen diesen.
-
-## Den Zufall einordnen
-
-Erstellen Sie einen ``std::vector`` mit der Größe von ``count`` und füllen diesen mit zufälligen Werten von 1-100.
-
-Erstellen Sie anschließend einen Commit und pushen diesen.
-
-## Zeig es mir Baby
-
-Damit Sie den Zufall kenne, müssen Sie ihn ausgeben können. Verwenden Sie hierzu die ``{fmt}`` Bibliothek und erstellen Sie eine Funktion, um den Vektor auszugeben.
-
-Erstellen Sie anschließend einen Commit und pushen diesen.
-
-## Der Zufall in geordneten Bahnen
-
-Sortieren Sie nun den Vector der Reihe nach. Das heißt die niedrigste Zahl zuerst. Das Ergebnis soll ebenfalls ausgegeben werden.
-
-Erstellen Sie anschließend einen Commit und pushen diesen.
-
-## Strava für Vektoren
-
-Damit Sie sich mit Ihren Kollegen messen können, interessiert Sie nur eine Sache. Geschwindigkeit. Wie schnell wurde der Vektor sortiert. Dazu nutzen Sie die Funktionen der Bibliothek ``std::chrono``
-
-```cpp
-auto start = std::chrono::system_clock::now();
-
-/* do some work */
-
-auto end = std::chrono::system_clock::now();
-auto elapsed = end - start;
-```
-
-Vermutlich wird Ihr Rechner diese Aufgabe durchaus unter einer Sekunde lösen. Das heißt, Sie müssen ihn entweder mehr fordern oder eine andere Zeitbasis wählen.
-
-```cpp
-// this constructs a duration object using milliseconds
-auto elapsed =
-    std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-```
-
-Sie haben es erfasst, die Ergebnisse sind wieder mit ``{fmt}`` auszugeben.
-
-Erstellen Sie anschließend einen Commit und pushen diesen in Ihr ``origin``
-
-## Nach getaner Arbeit
-
-Haben Sie alle Punkte erfolgreich abgearbeitet, erstellen Sie einen Merge-Request in Ihrem Fork und fügen mich ``graugans`` als Approval hinzu.
+Wir erstellen globale und lokale Variablen.
 
 ## Lernziele
 
 - Vertiefung der git Kenntnisse
 - Erste Schritte mit CMake
-- Umgang mit Vektoren
-- Umgang mit der CLI11
-- Umgang mit der ``{fmt}`` Bibliothek
-- Anwenden der [Algorithms library](https://en.cppreference.com/w/cpp/algorithm)
-- Zeitmessung mit ``std::chrono``
+- Umgang mit Speicherbereichen
 
 ## Anmerkungen
 
