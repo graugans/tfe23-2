@@ -4,6 +4,9 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+#include <vector> /* Does provide std::vector */
+#include <random>
+
 auto main(int argc, char **argv) -> int
 {
     /**
@@ -35,5 +38,53 @@ auto main(int argc, char **argv) -> int
     // fmt::print("Value of argv[3], {}!\n", argv[3]); /* possible null pointer exception */
     fmt::print("The value of counter {}!\n", counter);
 
+    std::vector<unsigned int> values{23,54,66};
+    fmt::print("Elements in values, {}!\n", values.size());
+    values.push_back(42);
+    values.push_back(4711);
+    values.push_back(11);
+    fmt::print("Elements in values, {}!\n", values.size());
+    for(int i = 0; i < values.size(); i++) {
+        fmt::print("Value of element {} in values: {}!\n", i, values[i]);
+    }
+    for (const unsigned int & value : values) { // access by const reference
+        fmt::print("Value of element {} !\n", value);
+    }
+
+    fmt::print("Value of none existing element 10 element {} !\n", values[10]);
+    // Throws an exception
+    //fmt::print("Value of none existing element 10 element  with at(): {} !\n", values.at(10));
+
+    // Seed with a real random value, if available
+    std::random_device r;
+ 
+    // Choose a random mean between 1 and 100
+    std::default_random_engine e1(r());
+    std::uniform_int_distribution<int> uniform_dist(1, 100);
+    int rand_value = uniform_dist(e1);
+
+    fmt::print("Random number between 1 and 100: {} !\n", rand_value);
+ 
+    std::vector<unsigned int> numbers;
+    for(int i = 0; i < counter; i++) {
+        numbers.push_back(uniform_dist(e1));
+    }
+
+    for ( const unsigned int& xyz : numbers) { // range based for loop
+        // value = 0; /* not allowed due to const */
+        fmt::print("Value of element {} in numbers!\n", xyz);
+    }
+
+    for(int i = 0; i < numbers.size(); i++) {
+        
+        fmt::print("Value of element {} in numbers: {}!\n", i, numbers[i]);
+        numbers[i] = 0; /* possible to modify the underlying vector entries */
+    }
+
+   for ( const unsigned int& xyz : numbers) { // range based for loop
+        // value = 0; /* not allowed due to const */
+        fmt::print("Value of element {} in numbers!\n", xyz);
+    }
+        
     return 0; /* exit gracefully*/
 }
