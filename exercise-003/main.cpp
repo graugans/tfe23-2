@@ -8,6 +8,8 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+#include "myvector.hpp"
+
 auto main(int argc, char** argv) -> int
 {
     /**
@@ -29,6 +31,13 @@ auto main(int argc, char** argv) -> int
     }
 
     fmt::println("Hello exercise number 3");
+    {
+        MyVector vec;
+    }
+    
+    MyVector vec2(27);
+    fmt::println("Hello exercise number 3 after Vector");
+
 
     return 0; /* exit gracefully*/
 }
