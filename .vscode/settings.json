@@ -103,9 +103,12 @@
         "*.ipp": "cpp",
         "complex": "cpp",
         "armadillo": "cpp",
-        "shared_mutex": "cpp"
+        "shared_mutex": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "numbers": "cpp"
     },
-    "cSpell.language": "en,en-GB",
+    "cSpell.language": "en,en-GB,de,de-DE",
     "cSpell.words": [
         "codespace",
         "Codespaces",
