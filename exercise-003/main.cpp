@@ -7,7 +7,6 @@
 
 #include "CLI/CLI.hpp"
 #include "config.h"
-
 #include "myvector.hpp"
 
 auto main(int argc, char** argv) -> int
@@ -34,10 +33,27 @@ auto main(int argc, char** argv) -> int
     {
         MyVector vec;
     }
-    
+
     MyVector vec2(27);
     fmt::println("Hello exercise number 3 after Vector");
 
+    // Seed with a real random value, if available
+    std::random_device r;
+
+    // Choose a random mean between 1 and 100
+    std::default_random_engine e1(r());
+    std::uniform_int_distribution<int> uniform_dist(1, 100);
+    for (int i = 0; i < counter; i++)
+    {
+        int rand = uniform_dist(e1);
+        fmt::println("The value of the random: {}", rand);
+        vec2.push_back(rand);
+    }
+
+    for (int i = 0; i < vec2.size(); i++)
+    {
+        fmt::println("The element number {} contains: {}", i, vec2.at(i));
+    }
 
     return 0; /* exit gracefully*/
 }
