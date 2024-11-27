@@ -8,6 +8,37 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+class Tier {
+    public:
+    virtual void iss()  {
+        fmt::println("Fresse wie ein Tier!");
+    }
+};
+
+class Hund : public Tier {
+    public:
+    void iss() override /*final*/ {
+        fmt::println("Wuff! fresse wie ein Hund!");
+    }
+};
+
+class Pudel : public Hund {
+    public:
+    void iss() override {
+        fmt::println("Wuff! fresse wie ein Pudel!");
+    }
+};
+class Katze: public Tier {
+    public:
+    void iss() override  {
+        fmt::println("Schnurr! fresse wie eine Katze!");
+    }
+};
+
+class Mensch: public Tier {
+
+};
+
 auto main(int argc, char** argv) -> int
 {
     /**
@@ -28,41 +59,21 @@ auto main(int argc, char** argv) -> int
         return app.exit(e);
     }
 
-    
-    // Seed with a real random value, if available
-    std::random_device r;
+    Tier base;
+    Hund elli;
+    Katze johnny;
+    Mensch sepp;
 
-    // Choose a random mean between 1 and 100
-    std::default_random_engine e1(r());
-    std::uniform_int_distribution<int> uniform_dist(1, 100);
-    int rand_value = uniform_dist(e1);
+    base.iss();
+    elli.iss();
+    johnny.iss();
+    sepp.iss();
+  
 
-    std::vector<unsigned int> numbers;
-    auto start = std::chrono::system_clock::now();
-    for (int i = 0; i < counter; i++)
-    {
-        numbers.push_back(uniform_dist(e1));
-    }
-    auto end = std::chrono::system_clock::now();
-
-    auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-    fmt::println("The inserting took: {}", elapsed);
-    //fmt::println("The random vector: [ {} ]", fmt::join(numbers, ", "));
-
-
-    fmt::println("Let's sort the numbers vector");
-    fmt::println("--------------------------------------------------------------------------");
-
-    start = std::chrono::system_clock::now();
-    std::sort(numbers.begin(), numbers.end(), std::less<int>());
-    end = std::chrono::system_clock::now();
-
-    fmt::println("The sorted numbers vector");
-    fmt::println("--------------------------------------------------------------------------");
-
-
-    //fmt::println("The sorted vector: [ {} ]", fmt::join(numbers, ", "));
-    elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-    fmt::println("The sorting took: {}", elapsed);
+    std::vector<Tier*> rudel{&base,&elli,&johnny,&sepp};
+    fmt::println("--------------------------------");
+    for(Tier* entity: rudel) {
+        entity->iss();
+    } 
     return 0; /* exit gracefully*/
 }
