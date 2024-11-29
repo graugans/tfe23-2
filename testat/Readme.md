@@ -16,6 +16,10 @@ Die Abfrage der Spritpreise können Sie über die API der [tankerkoenig.de](http
 
 Sie finden Beispiele zur Verwendung von `libcurl`` auf der [Projektwebseite](https://curl.se/libcurl/c/example.html).
 
+**WICHTIG:** Bitte beachten sie die Nutzungsbedingungen der Webseite [tankerkoenig.de](https://creativecommons.tankerkoenig.de/) dort wird zum Beispiel darauf hingewiesen, dass sie die Daten nicht schneller als alle 5 Minuten abrufen sollten.
+
+Für die Abfrage der Tankstellen können Sie den [Tankstellenfinder](https://creativecommons.tankerkoenig.de/TankstellenFinder/index.html) der Webseite [tankerkoenig.de](https://creativecommons.tankerkoenig.de/) verwenden.
+
 #### JSON Verarbeitung
 
 Die `JSON` Daten der API können Sie mit der integrierten JSON Bibliothek von [Niels Lohmann](https://json.nlohmann.me/features/parsing/parse_exceptions/) verarbeiten.
@@ -30,7 +34,7 @@ Wählen Sie mindestens zwei Varianten zur Benachrichtigung, hier einige Beispiel
 - MQTT
 - ...
 
-**WICHTIG:** Speichern Sie keine Passwörter oder Zugangs-Token im Quelltext, nutzen Sie hierfür Methoden wie Konfigurationsdateien oder Umgebungsvariablen.
+**WICHTIG:** Speichern Sie niemals Passwörter oder Zugangs-Token im Quelltext, nutzen Sie hierfür Methoden wie Konfigurationsdateien oder Umgebungsvariablen beziehungsweise Kommandozeilenargumente.
 
 ## Vorbereitung
 
