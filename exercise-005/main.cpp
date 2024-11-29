@@ -10,15 +10,24 @@
 
 class Tier {
     public:
-    virtual void iss()  {
+    virtual void iss() = 0; /* pure virtual */
+/*    
+    {
         fmt::println("Fresse wie ein Tier!");
     }
+*/
+    protected:
+    std::string m_name{"Tier"};
 };
 
 class Hund : public Tier {
     public:
+    Hund() {
+        m_name = "Hund";
+    }
     void iss() override /*final*/ {
         fmt::println("Wuff! fresse wie ein Hund!");
+        fmt::println("My Name is: {}",m_name);
     }
 };
 
@@ -36,7 +45,10 @@ class Katze: public Tier {
 };
 
 class Mensch: public Tier {
-
+    public:
+    void iss() override  {
+        fmt::println("Mahlzeit! Esse wie einMensch!");
+    }
 };
 
 auto main(int argc, char** argv) -> int
@@ -59,18 +71,18 @@ auto main(int argc, char** argv) -> int
         return app.exit(e);
     }
 
-    Tier base;
+    //Tier base;
     Hund elli;
     Katze johnny;
     Mensch sepp;
 
-    base.iss();
+    //base.iss();
     elli.iss();
     johnny.iss();
     sepp.iss();
   
 
-    std::vector<Tier*> rudel{&base,&elli,&johnny,&sepp};
+    std::vector<Tier*> rudel{/*&base,*/&elli,&johnny,&sepp};
     fmt::println("--------------------------------");
     for(Tier* entity: rudel) {
         entity->iss();
