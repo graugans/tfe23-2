@@ -10,6 +10,8 @@ Ziel ist es eine Kommandozeilen Applikation zu entwickeln welche als persönlich
   
 Für die Formatierung der Nachricht eignet sich zum Beispiel Markdown, alternativ können Sie auch eine HTML Ausgabe verwenden.
 
+![Description](doc/assets/IMG_6509.JPEG)
+
 ### Abfrage der Spritpreise
 
 Die Abfrage der Spritpreise können Sie über die API der [tankerkoenig.de](https://creativecommons.tankerkoenig.de/) realisieren. Die Abfrage erfolgt in C++ mittels der Bibliothek [libcurl](https://curl.se/libcurl/).
